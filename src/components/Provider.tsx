@@ -143,7 +143,7 @@ export default class KeepAliveProvider extends React.PureComponent<IKeepAlivePro
             delete cache[key as string];
           }
         } else if (Object.prototype.toString.call(name) === '[object String]') {
-          if (name.indexOf(keepAliveObject.children._owner.key) > -1 ) {
+          if (name === keepAliveObject.children._owner.key) {
             needDeletedCacheKeys.push(key);
             delete cache[key as string];
           }
